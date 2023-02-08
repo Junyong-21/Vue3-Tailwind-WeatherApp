@@ -8,7 +8,7 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: HomeView,
+			component:()=>import(/*webpackChunkName:"name"*/"@/views/HomeView.vue"),
             meta: {
                 title: 'Home',
             }
@@ -16,7 +16,7 @@ const router = createRouter({
 		{
 			path: '/weather/:state/:city',
 			name: 'CityView',
-			component: cityView,
+			component:()=>import(/*webpackChunkName:"name"*/"@/views/cityView.vue"),
             props: true,
             meta: {
                 title: 'Weather'
